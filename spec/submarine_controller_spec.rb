@@ -12,9 +12,9 @@ describe 'SubmarineController' do
     controller.follow_instruction('down', 8)
     controller.follow_instruction('forward', 2)
 
-    expect(controller.depth).to eq 10
+    expect(controller.depth).to eq 60
     expect(controller.horizontal).to eq 15
-    expect(controller.depth * controller.horizontal).to eq 150
+    expect(controller.depth * controller.horizontal).to eq 900
   end
 
   it 'invalid instruction' do

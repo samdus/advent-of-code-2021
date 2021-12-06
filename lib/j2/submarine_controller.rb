@@ -1,9 +1,10 @@
 class SubmarineController
   attr_accessor :depth, :horizontal
 
-  def initialize(depth=0, horizontal=0)
+  def initialize(depth=0, horizontal=0, aim=0)
     @depth=depth
     @horizontal=horizontal
+    @aim=aim
     @controls = {
       "forward" => method(:go_forward),
       "down" => method(:go_down),
@@ -23,13 +24,14 @@ class SubmarineController
 
   def go_forward(x)
     @horizontal += x
+    @depth += @aim * x
   end
 
   def go_down(x)
-    @depth += x
+    @aim += x
   end
 
   def go_up(x)
-    @depth -= x
+    @aim -= x
   end
 end
