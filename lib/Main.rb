@@ -2,6 +2,7 @@
 require "bundler/setup"
 require "dry/cli"
 require_relative 'j2/jour2'
+require_relative 'j3/jour3'
 
 module Main
   module CLI
@@ -18,6 +19,7 @@ module Main
 
       register "version", Version, aliases: ["v", "-v", "--version"]
       register "j2", Jour2
+      register "j3", Jour3
     end
   end
 end
