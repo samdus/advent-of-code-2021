@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require "bundler/setup"
 require "dry/cli"
+require_relative 'j2/jour2'
 
 module Main
   module CLI
@@ -16,6 +17,7 @@ module Main
       end
 
       register "version", Version, aliases: ["v", "-v", "--version"]
+      register "j2", Jour2
     end
   end
 end
