@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/j3/diagnosis_controller'
+require_relative '../../lib/j3/diagnosis_controller'
 
 describe 'DiagnosisController' do
   it 'succeeds' do

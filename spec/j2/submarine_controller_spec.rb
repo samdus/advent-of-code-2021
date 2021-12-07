@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../lib/j2/submarine_controller'
+require_relative '../../lib/j2/submarine_controller'
 
 describe 'SubmarineController' do
   it 'succeeds' do
