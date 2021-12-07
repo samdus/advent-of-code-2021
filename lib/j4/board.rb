@@ -5,7 +5,6 @@ class Board
     board_matrix = Matrix[*board_array]
     @rows = board_matrix.row_vectors
     @columns = board_matrix.column_vectors
-    @already_won = false
   end
 
   def draw(x)
@@ -19,10 +18,6 @@ class Board
 
   def sum
     @rows.reduce(0) { |s, row| s + row.sum }
-  end
-
-  def set_already_won
-    @already_won = true
   end
 
   private

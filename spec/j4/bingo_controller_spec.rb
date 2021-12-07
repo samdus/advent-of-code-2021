@@ -3,7 +3,7 @@ require_relative '../../lib/j4/bingo_controller'
 
 describe 'BingoController' do
   before(:all) do
-    @controller = BingoController.new [7, 4, 9, 5, 11, 17, 23, 2, 0, 14, 21, 24],
+    @controller = BingoController.new [7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1],
                                      [
                                        [
                                          [22, 13, 17, 11,  0],
@@ -29,9 +29,10 @@ describe 'BingoController' do
                                      ]
   end
 
-  # it 'succeeds when pay' do
-  #   expect(@controller.play).to eq 4512
-  # end
+  it 'succeeds when pay' do
+    expect(@controller.play).to eq 4512
+  end
+
   it 'succeeds when cheat' do
     expect(@controller.cheat).to eq 1924
   end

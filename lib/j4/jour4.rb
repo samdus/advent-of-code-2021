@@ -4,8 +4,9 @@ class Jour4 < Dry::CLI::Command
   desc "Day 4: Giant Squid"
 
   argument :file, desc: "Le chemin du fichier d'entré."
+  argument :cheat, desc: "Doit-on tricher ? (true,false)"
 
-  def call(file: nil, **)
+  def call(file: nil, cheat: false, **)
     if file.nil?
       puts "Indiquez un fichier d'entré"
     else
@@ -25,11 +26,12 @@ class Jour4 < Dry::CLI::Command
         end
       end
 
-      # puts boards.inspect
-      # return
-
       controller = BingoController.new numbers, boards
-      puts "Winner: #{controller.play}"
+      if cheat
+        puts "Winner: #{controller.cheat}"
+      else
+        puts "Winner: #{controller.play}"
+      end
     end
   end
 end

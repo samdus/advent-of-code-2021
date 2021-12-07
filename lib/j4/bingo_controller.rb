@@ -25,10 +25,11 @@ class BingoController
     win_sum = NO_WINNER
 
     @numbers.each do |number|
-      @boards.each do |board|
+      @boards.delete_if do |board|
         board.draw number
         if board.won?
           win_sum = board.sum * number
+          true
         end
       end
     end
