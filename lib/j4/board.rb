@@ -1,3 +1,5 @@
+require 'matrix'
+
 class Board
   attr_accessor :already_won
 
