@@ -5,6 +5,7 @@ require_relative 'j2/jour2'
 require_relative 'j3/jour3'
 require_relative 'j4/jour4'
 require_relative 'j5/jour5'
+require_relative 'j6/jour6'
 
 module Main
   module CLI
@@ -24,6 +25,7 @@ module Main
       register "j3", Jour3
       register "j4", Jour4
       register "j5", Jour5
+      register "j6", Jour6
     end
   end
 end
