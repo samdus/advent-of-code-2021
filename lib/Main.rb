@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require "bundler/setup"
 require "dry/cli"
+require_relative "j1/jour1"
 require_relative 'j2/jour2'
 require_relative 'j3/jour3'
 require_relative 'j4/jour4'
@@ -22,6 +23,7 @@ module Main
       end
 
       register "version", Version, aliases: ["v", "-v", "--version"]
+      register "j1", Jour1
       register "j2", Jour2
       register "j3", Jour3
       register "j4", Jour4
