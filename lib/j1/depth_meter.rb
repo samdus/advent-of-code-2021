@@ -13,11 +13,8 @@ class DepthMeter
 
   def depth_report(report)
     first, second, *remaining = report
-    if first.nil? or second.nil?
-      0
-    else
-      (second > first ? 1 : 0) + depth_report(remaining.unshift(second))
-    end
+    return 0 if first.nil? || second.nil?
+    (second > first ? 1 : 0) + depth_report(remaining.prepend(second))
   end
 
   def sum_slide_window(report, windowed_report=[])
