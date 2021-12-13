@@ -2,9 +2,11 @@ class DepthMeter
   def initialize(report)
     @report = report
   end
+
   def get_report_descending
     depth_report(@report)
   end
+
   def get_report_descending_window
     depth_report(sum_slide_window(@report))
   end
@@ -17,7 +19,7 @@ class DepthMeter
     (second > first ? 1 : 0) + depth_report(remaining.prepend(second))
   end
 
-  def sum_slide_window(report, windowed_report=[])
+  def sum_slide_window(report, windowed_report = [])
     first, second, third, *remaining = report
 
     return windowed_report if first.nil? || second.nil? || third.nil?
