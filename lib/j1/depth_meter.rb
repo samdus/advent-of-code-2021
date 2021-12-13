@@ -20,10 +20,7 @@ class DepthMeter
   def sum_slide_window(report, windowed_report=[])
     first, second, third, *remaining = report
 
-    if first.nil? or second.nil? or third.nil?
-      windowed_report
-    else
-      sum_slide_window(remaining.unshift(second, third), windowed_report.push(first + second + third))
-    end
+    return windowed_report if first.nil? || second.nil? || third.nil?
+    sum_slide_window(remaining.prepend(second, third), windowed_report.push(first + second + third))
   end
 end
